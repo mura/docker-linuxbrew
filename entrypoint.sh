@@ -1,5 +1,6 @@
 #!/bin/bash
 if [[ -n "$LOGIN" && ! $(id $LOGIN >/dev/null 2>&1) ]]; then
+  [ -f /app/initialize.sh ] && source /app/initialize.sh
   if [[ -z "$HOMEDIR" ]]; then
     export HOMEDIR="/home/$LOGIN"
   fi
