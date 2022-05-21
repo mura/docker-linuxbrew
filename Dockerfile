@@ -18,7 +18,7 @@ RUN <<EOF
   cp -rp /etc/ssh /app/ssh
 EOF
 
-VOLUME [ "/etc/ssh", "/home/linuxbrew" ]
+VOLUME [ "/etc/ssh" ]
 EXPOSE 22
 
 ENV UID 1000
