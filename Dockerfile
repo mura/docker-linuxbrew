@@ -24,5 +24,6 @@ EXPOSE 22
 ENV UID 1000
 ENV GROUP users
 ENV GROUPS users
+ENV LOGIN_SHELL /bin/bash
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
