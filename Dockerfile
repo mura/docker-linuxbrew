@@ -13,7 +13,10 @@ WORKDIR /app
 
 COPY --chmod=755 entrypoint.sh /app/
 
-RUN mkdir -p /run/sshd
+RUN <<EOF
+  mkdir -p /run/sshd
+  cp -rp /etc/ssh /app/ssh
+EOF
 
 VOLUME [ "/etc/ssh", "/home/linuxbrew" ]
 EXPOSE 22

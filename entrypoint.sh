@@ -7,6 +7,9 @@ if [[ -n "$LOGIN" && ! $(id $LOGIN >/dev/null 2>&1) ]]; then
   echo "$LOGIN:$PASSWORD" | chpasswd
 fi
 
+if [ ! -f "/etc/ssh/sshd_config" ];then
+  cp -rp /app/ssh/* /etc/ssh/
+fi
 if [ ! -f "/etc/ssh/ssh_host_rsa_key" ]; then
   ssh-keygen -A
 fi
